@@ -687,7 +687,7 @@
 		<tr><td width="33%"><%:Processor%></td><td><%=pcdata(processor or "?")%></td></tr>
 		<tr><td width="33%"><%:Architecture%></td><td><%=pcdata(march or "?")%></td></tr>
 		<tr><td width="33%"><%:Builder%></td><td>
-            crackself  (<%=luci.sys.exec("cat /proc/version | cut -c52-69") %>) <%=luci.sys.exec("cat /proc/version | cut -f15-19 -d' '") %>
+            crackself  <%=luci.sys.exec("cat /proc/version | cut -c52-69") %>) <%=luci.sys.exec("cat /proc/version | cut -f15-19 -d' '") %>
         </td></tr>
 		<tr><td width="33%"><%:Firmware Version%></td><td>
 			<%=pcdata(ver.distname)%> <%=pcdata(ver.distversion)%> /
