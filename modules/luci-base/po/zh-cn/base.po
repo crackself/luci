@@ -3818,6 +3818,18 @@ msgstr "是"
 msgid "« Back"
 msgstr "« 后退"
 
+msgid "Chips Model"
+msgstr "芯片型号"
+
+msgid "Builder"
+msgstr "固件标识"
+
+msgid "Processor"
+msgstr "芯片型号"
+
+msgid "Architecture"
+msgstr "芯片平台"
+
 #~ msgid "Leasetime"
 #~ msgstr "租用时间"
 
