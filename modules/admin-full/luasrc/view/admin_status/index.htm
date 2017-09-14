@@ -571,7 +571,7 @@ You may obtain a copy of the License at
 		<tr><td width="33%"><%:Machine%></td><td><%=pcdata(machine or "?")%></td></tr>
 		<tr><td width="33%"><%:Architecture%></td><td><%=pcdata(architecture or "?")%></td></tr>
 		<tr><td width="33%"><%:Builder%></td><td>
-            crackself  (<%=luci.sys.exec("cat /proc/version | cut -c46-63") %>) <%=luci.sys.exec("cat /proc/version | cut -f15-19 -d' '") %>
+            crackself  (<%=luci.sys.exec("cat /proc/version | cut -c46-60") %>) <%=luci.sys.exec("cat /proc/version | cut -f15-19 -d' '") %>
         </td></tr>
 		<tr><td width="33%"><%:Firmware Version%></td><td>
 			<%=pcdata(luci.version.distname)%> <%=pcdata(luci.version.distversion)%> /

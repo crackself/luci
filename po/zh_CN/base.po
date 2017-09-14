@@ -1468,6 +1468,9 @@ msgstr "路由型号"
 msgid "Architecture"
 msgstr "芯片架构"
 
+msgid "Builder"
+msgstr "固件标识"
+
 msgid "Modem device"
 msgstr "调制解调器节点"
 
