@@ -15,6 +15,11 @@ You may obtain a copy of the License at
 	require "luci.fs"
 	require "luci.tools.status"
 
+	local cpuinfo = luci.sys.exec("cat /proc/cpuinfo") or { }
+	local processor = cpuinfo:match("system type\t+: ([^\n]+)") or { }
+	local architecture = cpuinfo:match("cpu model\t+: ([^\n]+)") or { }
+	local machine = cpuinfo:match("machine\t+: ([^\n]+)") or { }
+	
 	local has_ipv6 = luci.fs.access("/proc/net/ipv6_route")
 	local has_dhcp = luci.fs.access("/etc/config/dhcp")
 	local has_wifi = luci.fs.stat("/etc/config/wireless")
@@ -562,6 +567,12 @@ You may obtain a copy of the License at
 	<table width="100%" cellspacing="10">
 		<tr><td width="33%"><%:Hostname%></td><td><%=luci.sys.hostname() or "?"%></td></tr>
 		<tr><td width="33%"><%:Model%></td><td><%=pcdata(model or "?")%></td></tr>
+		<tr><td width="33%"><%:Processor%></td><td><%=pcdata(processor or "?")%></td></tr>
+		<tr><td width="33%"><%:Machine%></td><td><%=pcdata(machine or "?")%></td></tr>
+		<tr><td width="33%"><%:Architecture%></td><td><%=pcdata(architecture or "?")%></td></tr>
+		<tr><td width="33%"><%:Builder%></td><td>
+            crackself  (<%=luci.sys.exec("cat /proc/version | cut -c46-63") %>) <%=luci.sys.exec("cat /proc/version | cut -f15-19 -d' '") %>
+        </td></tr>
 		<tr><td width="33%"><%:Firmware Version%></td><td>
 			<%=pcdata(luci.version.distname)%> <%=pcdata(luci.version.distversion)%> /
 			<%=pcdata(luci.version.luciname)%> (<%=pcdata(luci.version.luciversion)%>)
