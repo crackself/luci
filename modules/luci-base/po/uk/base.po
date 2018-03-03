@@ -686,6 +686,13 @@ msgstr "Команда"
 msgid "Common Configuration"
 msgstr "Загальна конфігурація"
 
+msgid ""
+"Complicates key reinstallation attacks on the client side by disabling "
+"retransmission of EAPOL-Key frames that are used to install keys. This "
+"workaround might cause interoperability issues and reduced robustness of key "
+"negotiation especially in environments with heavy traffic load."
+msgstr ""
+
 msgid "Compression"
 msgstr "Стиснення"
 
@@ -1067,6 +1074,9 @@ msgid "Enable VLAN functionality"
 msgstr "Увімкнути підтримку VLAN"
 
 msgid "Enable WPS pushbutton, requires WPA(2)-PSK"
+msgstr ""
+
+msgid "Enable key reinstallation (KRACK) countermeasures"
 msgstr ""
 
 msgid "Enable learning and aging"
@@ -1973,6 +1983,9 @@ msgstr "Пам'ять"
 msgid "Memory usage (%)"
 msgstr "Використання пам'яті, %"
 
+msgid "Mesh Id"
+msgstr ""
+
 msgid "Metric"
 msgstr "Метрика"
 
@@ -2416,6 +2429,9 @@ msgstr ""
 
 msgid "Password successfully changed!"
 msgstr "Пароль успішно змінено!"
+
+msgid "Password2"
+msgstr ""
 
 msgid "Path to CA-Certificate"
 msgstr "Шлях до центру сертифікції"
@@ -3877,6 +3893,9 @@ msgstr "якщо мета — мережа"
 
 msgid "input"
 msgstr "вхід"
+
+msgid "internal forwarding of Mesh-peers"
+msgstr ""
 
 msgid "kB"
 msgstr "КБ"

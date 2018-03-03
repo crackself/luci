@@ -678,6 +678,13 @@ msgstr "Comando"
 msgid "Common Configuration"
 msgstr "Configurazioni Comuni"
 
+msgid ""
+"Complicates key reinstallation attacks on the client side by disabling "
+"retransmission of EAPOL-Key frames that are used to install keys. This "
+"workaround might cause interoperability issues and reduced robustness of key "
+"negotiation especially in environments with heavy traffic load."
+msgstr ""
+
 msgid "Compression"
 msgstr "Compressione"
 
@@ -1055,6 +1062,9 @@ msgid "Enable VLAN functionality"
 msgstr "Abilita la funzionalità VLAN"
 
 msgid "Enable WPS pushbutton, requires WPA(2)-PSK"
+msgstr ""
+
+msgid "Enable key reinstallation (KRACK) countermeasures"
 msgstr ""
 
 msgid "Enable learning and aging"
@@ -1959,6 +1969,9 @@ msgstr "Memoria"
 msgid "Memory usage (%)"
 msgstr "Uso Memory (%)"
 
+msgid "Mesh Id"
+msgstr ""
+
 msgid "Metric"
 msgstr "Metrica"
 
@@ -2396,6 +2409,9 @@ msgstr ""
 
 msgid "Password successfully changed!"
 msgstr "Password cambiata con successo!"
+
+msgid "Password2"
+msgstr ""
 
 msgid "Path to CA-Certificate"
 msgstr "Percorso al certificato CA"
@@ -3812,6 +3828,9 @@ msgstr "se la destinazione è una rete"
 
 msgid "input"
 msgstr "ingresso"
+
+msgid "internal forwarding of Mesh-peers"
+msgstr ""
 
 msgid "kB"
 msgstr "kB"

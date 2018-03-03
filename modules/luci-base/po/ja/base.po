@@ -673,6 +673,13 @@ msgstr "コマンド"
 msgid "Common Configuration"
 msgstr "一般設定"
 
+msgid ""
+"Complicates key reinstallation attacks on the client side by disabling "
+"retransmission of EAPOL-Key frames that are used to install keys. This "
+"workaround might cause interoperability issues and reduced robustness of key "
+"negotiation especially in environments with heavy traffic load."
+msgstr ""
+
 msgid "Compression"
 msgstr "圧縮"
 
@@ -1052,6 +1059,9 @@ msgstr "VLAN機能を有効にする"
 
 msgid "Enable WPS pushbutton, requires WPA(2)-PSK"
 msgstr "WPS プッシュボタンを有効化するには、WPA(2)-PSKが必要です。"
+
+msgid "Enable key reinstallation (KRACK) countermeasures"
+msgstr ""
 
 msgid "Enable learning and aging"
 msgstr "ラーニング エイジング機能を有効にする"
@@ -1954,6 +1964,9 @@ msgstr "メモリー"
 msgid "Memory usage (%)"
 msgstr "メモリ使用率 (%)"
 
+msgid "Mesh Id"
+msgstr ""
+
 msgid "Metric"
 msgstr "メトリック"
 
@@ -2398,6 +2411,9 @@ msgstr ""
 
 msgid "Password successfully changed!"
 msgstr "パスワードを変更しました"
+
+msgid "Password2"
+msgstr ""
 
 msgid "Path to CA-Certificate"
 msgstr "CA証明書のパス"
@@ -3844,6 +3860,9 @@ msgstr "ターゲットがネットワークの場合"
 
 msgid "input"
 msgstr "入力"
+
+msgid "internal forwarding of Mesh-peers"
+msgstr ""
 
 msgid "kB"
 msgstr "kB"

@@ -677,6 +677,13 @@ msgstr "Εντολή"
 msgid "Common Configuration"
 msgstr "Κοινή Παραμετροποίηση"
 
+msgid ""
+"Complicates key reinstallation attacks on the client side by disabling "
+"retransmission of EAPOL-Key frames that are used to install keys. This "
+"workaround might cause interoperability issues and reduced robustness of key "
+"negotiation especially in environments with heavy traffic load."
+msgstr ""
+
 msgid "Compression"
 msgstr "Συμπίεση"
 
@@ -1057,6 +1064,9 @@ msgid "Enable VLAN functionality"
 msgstr "Ενεργοποίηση λειτουργίας VLAN"
 
 msgid "Enable WPS pushbutton, requires WPA(2)-PSK"
+msgstr ""
+
+msgid "Enable key reinstallation (KRACK) countermeasures"
 msgstr ""
 
 msgid "Enable learning and aging"
@@ -1951,6 +1961,9 @@ msgstr "Μνήμη"
 msgid "Memory usage (%)"
 msgstr "Χρήση Μνήμης (%)"
 
+msgid "Mesh Id"
+msgstr ""
+
 msgid "Metric"
 msgstr "Μέτρο"
 
@@ -2390,6 +2403,9 @@ msgstr ""
 
 msgid "Password successfully changed!"
 msgstr "Ο κωδικός πρόσβασης άλλαξε επιτυχώς!"
+
+msgid "Password2"
+msgstr ""
 
 msgid "Path to CA-Certificate"
 msgstr "Διαδρομή για Πιστοποιητικό CA"
@@ -3778,6 +3794,9 @@ msgstr "αν ο στόχος είναι ένα δίκτυο"
 
 msgid "input"
 msgstr "είσοδος"
+
+msgid "internal forwarding of Mesh-peers"
+msgstr ""
 
 msgid "kB"
 msgstr ""

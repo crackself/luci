@@ -675,6 +675,13 @@ msgstr "Parancs"
 msgid "Common Configuration"
 msgstr "Álatános beállítás"
 
+msgid ""
+"Complicates key reinstallation attacks on the client side by disabling "
+"retransmission of EAPOL-Key frames that are used to install keys. This "
+"workaround might cause interoperability issues and reduced robustness of key "
+"negotiation especially in environments with heavy traffic load."
+msgstr ""
+
 msgid "Compression"
 msgstr "Tömörítés"
 
@@ -1054,6 +1061,9 @@ msgid "Enable VLAN functionality"
 msgstr "VLAN funkció engedélyezése"
 
 msgid "Enable WPS pushbutton, requires WPA(2)-PSK"
+msgstr ""
+
+msgid "Enable key reinstallation (KRACK) countermeasures"
 msgstr ""
 
 msgid "Enable learning and aging"
@@ -1961,6 +1971,9 @@ msgstr "Memória"
 msgid "Memory usage (%)"
 msgstr "Memória használat (%)"
 
+msgid "Mesh Id"
+msgstr ""
+
 msgid "Metric"
 msgstr "Metrika"
 
@@ -2400,6 +2413,9 @@ msgstr ""
 
 msgid "Password successfully changed!"
 msgstr "A jelszó megváltoztatása sikeres!"
+
+msgid "Password2"
+msgstr ""
 
 msgid "Path to CA-Certificate"
 msgstr "CA tanúsítvány elérési útja"
@@ -3860,6 +3876,9 @@ msgstr "ha a cél hálózat"
 
 msgid "input"
 msgstr "bemenet"
+
+msgid "internal forwarding of Mesh-peers"
+msgstr ""
 
 msgid "kB"
 msgstr "kB"
