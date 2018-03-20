@@ -1,0 +1,57 @@
+<%#
+ Copyright 2014 Aedan Renner <chipdankly@gmail.com>
+ Copyright 2018 Florian Eckert <fe@dev.tdt.de>
+ Licensed to the public under the GNU General Public License v2.
+-%>
+
+<script type="text/javascript">//<![CDATA[
+XHR.poll(5, '<%=luci.dispatcher.build_url("admin", "status", "mwan", "interface_status")%>', null,
+		function(x, status)
+		{
+			var statusDiv = document.getElementById('mwan_status_text');
+			if (status.interfaces)
+			{
+				var statusview = '';
+				for ( var iface in status.interfaces)
+				{
+					var state = '';
+					switch (status.interfaces[iface].status)
+					{
+						case 'online':
+							state = '<%:Online (tracking active)%>';
+							break;
+						case 'notMonitored':
+							state = '<%:Online (tracking off)%>';
+							break;
+						case 'offline':
+							state = '<%:Offline%>';
+							break;
+						default:
+							state = '<%:Disabled%>';
+							break;
+					}
+					statusview += String.format(
+						'<div><strong>Interface: </strong>%s</div>',
+						iface
+					);
+					statusview += String.format(
+						'<div><strong>Status: </strong>%s</div></br></br>',
+						state
+					);
+				}
+				statusDiv.innerHTML = statusview;
+			}
+			else
+			{
+				statusDiv.innerHTML = '<strong><%:No MWAN interfaces found%></strong>';
+			}
+		}
+	);
+//]]></script>
+
+<fieldset id="interface_field" class="cbi-section">
+	<legend><%:MWAN Interfaces%></legend>
+	<div id="mwan_status_text">
+		<img src="<%=resource%>/icons/loading.gif" alt="<%:Loading%>" style="vertical-align:middle" /><%:Collecting data...%>
+	</div>
+</fieldset>
