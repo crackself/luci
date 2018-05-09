@@ -13,7 +13,7 @@ config extern flash_keep
 	option uploads	"/lib/uci/upload/"
 	
 config internal languages
-	option zh_cn 'chinese'
+	option zh_cn '中文 (Chinese)'
 	option en 'English'
 	
 config internal sauth
