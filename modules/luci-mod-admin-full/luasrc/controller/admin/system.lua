@@ -74,7 +74,7 @@ function action_packages()
 	local out, err
 
 	-- Display
-	local display = luci.http.formvalue("display") or "installed"
+	local display = luci.http.formvalue("display") or "available"
 
 	-- Letter
 	local letter = string.byte(luci.http.formvalue("letter") or "A", 1)
@@ -269,15 +269,17 @@ function action_sysupgrade()
 	--
 	-- Initiate firmware flash
 	--
-	local step = tonumber(http.formvalue("step") or 1)
+	local step = tonumber(http.formvalue("step")) or 1
 	if step == 1 then
-		if image_supported(image_tmp) then
+		local force = http.formvalue("force")
+		if image_supported(image_tmp) or force then
 			luci.template.render("admin_system/upgrade", {
 				checksum = image_checksum(image_tmp),
 				sha256ch = image_sha256_checksum(image_tmp),
 				storage  = storage_size(),
 				size     = (fs.stat(image_tmp, "size") or 0),
-				keep     = (not not http.formvalue("keep"))
+				keep     = (not not http.formvalue("keep")),
+				force    = (not not http.formvalue("force"))
 			})
 		else
 			fs.unlink(image_tmp)
@@ -287,17 +289,19 @@ function action_sysupgrade()
 				image_invalid = true
 			})
 		end
+
 	--
 	-- Start sysupgrade flash
 	--
 	elseif step == 2 then
 		local keep = (http.formvalue("keep") == "1") and "" or "-n"
+		local force = (http.formvalue("force") == "1") and "-F" or ""
 		luci.template.render("admin_system/applyreboot", {
 			title = luci.i18n.translate("Flashing..."),
 			msg   = luci.i18n.translate("The system is flashing now.<br /> DO NOT POWER OFF THE DEVICE!<br /> Wait a few minutes before you try to reconnect. It might be necessary to renew the address of your computer to reach the device again, depending on your settings."),
-			addr  = (#keep > 0) and "192.168.1.1" or nil
+			addr  = (#keep > 0) and (#force > 0) and "192.168.1.1" or nil
 		})
-		fork_exec("sleep 1; killall dropbear uhttpd; sleep 1; /sbin/sysupgrade %s %q" %{ keep, image_tmp })
+		fork_exec("sleep 1; killall dropbear uhttpd; sleep 1; /sbin/sysupgrade %s %s %q" %{ keep, force, image_tmp })
 	end
 end
 
@@ -341,9 +345,17 @@ function action_restore()
 
 	local upload = http.formvalue("archive")
 	if upload and #upload > 0 then
-		luci.template.render("admin_system/applyreboot")
-		os.execute("tar -C / -xzf %q >/dev/null 2>&1" % archive_tmp)
-		luci.sys.reboot()
+		if os.execute("gunzip -t %q >/dev/null 2>&1" % archive_tmp) == 0 then
+			luci.template.render("admin_system/applyreboot")
+			os.execute("tar -C / -xzf %q >/dev/null 2>&1" % archive_tmp)
+			luci.sys.reboot()
+		else
+			luci.template.render("admin_system/flashops", {
+				reset_avail   = supports_reset(),
+				upgrade_avail = supports_sysupgrade(),
+				backup_invalid = true
+			})
+		end
 		return
 	end
 
