@@ -407,7 +407,7 @@ msgid "Apply unchecked"
 msgstr "强制应用"
 
 msgid "Architecture"
-msgstr "架构"
+msgstr "芯片架构"
 
 msgid ""
 "Assign a part of given length of every public IPv6-prefix to this interface"
